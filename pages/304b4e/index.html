@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>无重复字符的最长子串 | IT吧</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="前端知识体系收集,前端面试题,前端收集">
+    <meta name="keywords" content="it8,it吧,前端知识体系,前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.f878aba8.css" as="style"><link rel="preload" href="/assets/js/app.51b2f07e.js" as="script"><link rel="preload" href="/assets/js/2.1834a619.js" as="script"><link rel="preload" href="/assets/js/13.66cb7ca3.js" as="script"><link rel="prefetch" href="/assets/js/10.8c9829e6.js"><link rel="prefetch" href="/assets/js/11.68218080.js"><link rel="prefetch" href="/assets/js/12.b65b6dbf.js"><link rel="prefetch" href="/assets/js/14.a76f255b.js"><link rel="prefetch" href="/assets/js/15.9ba0ff33.js"><link rel="prefetch" href="/assets/js/16.bdee8aff.js"><link rel="prefetch" href="/assets/js/17.159879a6.js"><link rel="prefetch" href="/assets/js/18.7143d0ea.js"><link rel="prefetch" href="/assets/js/19.e36e21f0.js"><link rel="prefetch" href="/assets/js/20.d53c4a59.js"><link rel="prefetch" href="/assets/js/21.2f11f50b.js"><link rel="prefetch" href="/assets/js/22.bf293c33.js"><link rel="prefetch" href="/assets/js/23.110ba1c5.js"><link rel="prefetch" href="/assets/js/24.c2c4fc00.js"><link rel="prefetch" href="/assets/js/25.7aa6dc6c.js"><link rel="prefetch" href="/assets/js/26.770c3448.js"><link rel="prefetch" href="/assets/js/3.6a29b6ef.js"><link rel="prefetch" href="/assets/js/4.524697e6.js"><link rel="prefetch" href="/assets/js/5.792cd270.js"><link rel="prefetch" href="/assets/js/6.9513fcf8.js"><link rel="prefetch" href="/assets/js/7.76cd3b51.js"><link rel="prefetch" href="/assets/js/8.3e5d344b.js"><link rel="prefetch" href="/assets/js/9.a75cd5c7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f878aba8.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/home-icon.png" alt="IT吧" class="logo"> <span class="site-name can-hide">IT吧</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><!----> <span class="title" style="display:;">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/base/" class="nav-link">基础知识</a></li><li class="dropdown-item"><!----> <a href="/javascript/diy/" class="nav-link">原理实现</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><a href="/pages/vue/" class="link-title">框架</a> <span class="title" style="display:none;">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/vue/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">Webpack</a></li></ul></div></div><div class="nav-item"><a href="/pages/letcode/" class="nav-link">算法</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><!----> <span class="title" style="display:;">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/base/" class="nav-link">基础知识</a></li><li class="dropdown-item"><!----> <a href="/javascript/diy/" class="nav-link">原理实现</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><a href="/pages/vue/" class="link-title">框架</a> <span class="title" style="display:none;">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/vue/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">Webpack</a></li></ul></div></div><div class="nav-item"><a href="/pages/letcode/" class="nav-link">算法</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/pages/09ad27/" class="sidebar-link">找出出现次数最多的数字</a></li><li><a href="/pages/374537/" class="sidebar-link">将虚拟dom转换为真实dom</a></li><li><a href="/pages/15ac2e/" class="sidebar-link">有效括号匹配</a></li><li><a href="/pages/aed39f/" class="sidebar-link">最长公共前缀</a></li><li><a href="/pages/304b4e/" aria-current="page" class="active sidebar-link">无重复字符的最长子串</a><ul class="sidebar-sub-headers"></ul></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-1"><!----> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">
+          无重复字符的最长子串
+        </h1> <!----> <div class="theme-vdoing-content content__default"><h3 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+​
+​
+示例 1:
+​
+输入: s = &quot;abcabcbb&quot;
+输出: 3
+解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。
+​
+示例 2:
+​
+输入: s = &quot;bbbbb&quot;
+输出: 1
+解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。
+​
+示例 3:
+​
+输入: s = &quot;pwwkew&quot;
+输出: 3
+解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。
+​
+示例 4:
+​
+输入: s = &quot;&quot;
+输出: 0
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><details class="custom-block details"><summary>题解分析</summary> <ol><li>设置左边边界 l :初始为 0, 设置最大重复数 res :初始为 0, 设置一个 map ,记录出现的位置</li> <li>遍历传入的字符串, <code>r</code> 表示右边的边界</li> <li>遍历判断当前右边的边界值是否出现在 map 中</li> <li>如果出现则把 l 右边界值更新为原位置 + 1</li></ol></details> <h3 id="题解"><a href="#题解" class="header-anchor">#</a> 题解</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">'abcabcbb'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">long</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> r <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> r <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> r<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      l <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    res <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> r <span class="token operator">-</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">long</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div></div></div> <!----> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2021/12/02, 12:17:20</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/aed39f/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">最长公共前缀</div></a> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/aed39f/" class="prev">最长公共前缀</a></span> <!----></p></div></div></div> <!----></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> <!----></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.51b2f07e.js" defer></script><script src="/assets/js/2.1834a619.js" defer></script><script src="/assets/js/13.66cb7ca3.js" defer></script>
+  </body>
+</html>
